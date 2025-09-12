@@ -22,9 +22,9 @@ export default function ContactSection() {
     e.preventDefault();
     setLoading(true);
 
-    const SERVICE_ID = "YOUR_SERVICE_ID";
-    const TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-    const PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+    const SERVICE_ID = "service_mkn6ntk";
+    const TEMPLATE_ID = "template_dmjk7hr";
+    const PUBLIC_KEY = "GMJvkBy0pO9nXJeh4";
 
     emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, PUBLIC_KEY).then(
       () => {
