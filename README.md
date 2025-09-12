@@ -62,7 +62,7 @@ npm run lint
 Clone the repository
 
 git clone https://github.com/Leeni-Patidar/LEENI_PORTFOLIO.git
-cd LEENI_PORTFOLIO
+- cd LEENI_PORTFOLIO
 
 # Install dependencies
 
