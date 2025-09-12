@@ -1,0 +1,117 @@
+/* Import Google Font first */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap');
+
+/* Then import Tailwind */
+@import "tailwindcss";
+
+/* Apply Josefin Sans globally */
+body {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+
+
+/* Gradient heading text */
+.heading {
+  font-family: 'Josefin Sans', sans-serif;
+  background: linear-gradient(90deg, #5DFFFF 40%, #AE0CA7 60%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* Firefox support */
+  color: transparent;
+}
+
+/* Gradient button */
+.gradient-button {
+  padding: 8px 26px;
+  background: linear-gradient(65deg, #5DFFFF 10%, #AE0CA7 100%);
+  box-shadow: 0.3px 0.3px 0.3px rgba(0, 0, 0, 0.3);
+  border-radius: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gradient-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.gradient-button span {
+  color: white;
+  font-size: 18px;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 600;
+  line-height: 30px;
+  word-wrap: break-word;
+}
+
+/* ----------------- */
+/* Gradient Icon Box */
+/* ----------------- */
+.icon-wrapper {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.icon-box {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(65deg, #5DFFFF 0%, #AE0CA7 100%);
+  box-shadow: 0.3px 0.3px 0.3px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  filter: blur(0.15px);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.icon-inner {
+  position: relative;
+  color: #FAFAFA; /* white */
+  font-size: 18px;
+  z-index: 2; /* keep above gradient */
+}
+
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #100425;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5dffff;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f580f1;
+}
+
+/* Glassmorphism utilities */
+.glass {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.glass-border {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Grid pattern for glassmorphism effect */
+.grid-pattern {
+  background-image: linear-gradient(rgba(93, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(93, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
