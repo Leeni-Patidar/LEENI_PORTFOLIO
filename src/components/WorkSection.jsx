@@ -22,7 +22,7 @@ export default function WorkSection() {
       tags: ["React", "Node.js", "MySQL"],
       links: {
         github: "https://github.com/Leeni-Patidar/Sip-Chill",
-        live: "sip-chill.vercel.app",
+        live: "https://sip-chill.vercel.app/",
       },
     },
     {
