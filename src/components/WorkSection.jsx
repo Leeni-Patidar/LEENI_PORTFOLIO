@@ -11,7 +11,7 @@ export default function WorkSection() {
       tags: ["React", "Node.js", "Express", "MongoDB"],
       links: {
         github: "https://github.com/Leeni-Patidar/BloomingBasket",
-        live: "#",
+        live: "https://bloomingbasket-client.onrender.com",
       },
     },
     {
@@ -22,7 +22,7 @@ export default function WorkSection() {
       tags: ["React", "Node.js", "MySQL"],
       links: {
         github: "https://github.com/Leeni-Patidar/Sip-Chill",
-        live: "#",
+        live: "sip-chill.vercel.app",
       },
     },
     {

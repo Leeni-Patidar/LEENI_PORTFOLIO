@@ -49,7 +49,7 @@ const AboutSection = () => {
 
       {/* Description */}
       <p className="mt-10 text-lg md:text-xl text-[#fafafa]/90 leading-8 md:leading-9 text-center max-w-4xl font-['Josefin_Sans'] z-10">
-       I am a Full Stack MERN Developer skilled in React, Node.js, Express, and MongoDB. Passionate about writing clean, maintainable code, I focus on building responsive, accessible, and high-performance applications. With strong problem-solving and teamwork skills, I thrive in collaborative environments, delivering impactful digital solutions that enhance user experiences.
+       I am a  MERN Stack Developer skilled in React, Node.js, Express, and MongoDB. Passionate about writing clean, maintainable code, I focus on building responsive, accessible, and high-performance applications. With strong problem-solving and teamwork skills, I thrive in collaborative environments, delivering impactful digital solutions that enhance user experiences.
       </p>
 
       {/* Orbit icons container */}

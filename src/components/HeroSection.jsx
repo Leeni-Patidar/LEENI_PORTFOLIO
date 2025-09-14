@@ -16,10 +16,10 @@ export default function HeroSection() {
               Hi, I'm Leeni
             </h1>
             <h2 className="text-2xl lg:text-3xl heading font-medium mt-4">
-              Full Stack Developer
+             MERN Stack Developer
             </h2>
             <p className="text-lg text-[#d9d9d9] leading-relaxed max-w-lg mt-6">
-              I’m a Full Stack MERN Developer specializing in creating responsive and scalable web applications. I build seamless front-end experiences and robust back-end systems that deliver real value to users and businesses. </p>
+              I’m a MERN Stack Developer specializing in creating responsive and scalable web applications. I build seamless front-end experiences and robust back-end systems that deliver real value to users and businesses. </p>
 
             <button
               onClick={() => window.open("/LEENI_RESUME.pdf", "_blank")}
