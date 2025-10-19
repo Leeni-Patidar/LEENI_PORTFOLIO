@@ -5,7 +5,7 @@ export default function Experience() {
     {
       role: "Trainee → Developer",
       company: "MII Foundation (Medi-Caps Innovation & Incubation, Indore)",
-      duration: "Jan 2024 – Present",
+      duration: "Jan 2025 – Present",
       description: [
         "Started as a Frontend Trainee, contributing to the ERP Portal using HTML, CSS, JavaScript, Bootstrap, and React.",
         "Progressed to Developer, working on both the ERP Portal and the MII website.",
