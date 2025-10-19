@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
         {/* Left side text */}
         <p className="text-[#FAFAFA] text-sm font-josefin">
-          2024 – Leeni Patidar, All rights reserved
+        Leeni Patidar, All rights reserved
         </p>
 
         {/* Social icons */}
