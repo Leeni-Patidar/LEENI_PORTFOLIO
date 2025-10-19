@@ -30,24 +30,13 @@ export default function WorkSection() {
       description:
         "A web application for tracking student attendance. It allows administrators to record, manage, and analyze attendance data efficiently while ensuring accurate reporting and streamlined academic record management.",
       image: "/Attendance.png",
-      tags: ["React", "Node.js", "Express", "MongoDB"],
+      tags: ["React"],
       links: {
         github: "https://github.com/Leeni-Patidar/Attendance-Management-System",
         live: "#",
       },
     },
-    {
-      title: "Collex",
-      description:
-        "A collection management platform that helps users organize, categorize, and display digital or physical collections. Features include intuitive UI, search functionality, and interactive presentation for efficient collection management.",
-      image: "/Collex.png",
-      tags: ["React", "Node.js", "Express", "MongoDB"],
-      links: {
-        github: "https://github.com/Leeni-Patidar/Collex",
-        live: "#",
-      },
-    },
-  ]
+    ]
 
   return (
     <section id="work" className="relative py-20 px-6 bg-[#100425] overflow-hidden">
