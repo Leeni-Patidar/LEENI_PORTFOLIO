@@ -53,15 +53,15 @@ const AboutSection = () => {
       </p>
 
       {/* Orbit icons container */}
-      <div className="absolute w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(220,0,211,0.4),transparent)] blur-[200px] top-40 left-1/2 -translate-x-1/2"></div>
-      <div className="relative  w-full max-w-[400px] md:max-w-[600px] h-[400px] md:h-[600px] flex justify-center items-center">
+      {/* <div className="absolute w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(220,0,211,0.4),transparent)] blur-[200px] top-40 left-1/2 -translate-x-1/2"></div> */}
+      {/* <div className="relative  w-full max-w-[400px] md:max-w-[600px] h-[400px] md:h-[600px] flex justify-center items-center"> */}
         {/* Central glowing circle */}
-        <div className="absolute w-24 md:w-36 h-24 md:h-36 rounded-full bg-gradient-to-b from-[#5DFFFF]/30 to-[#DC00D3]/15 flex items-center justify-center z-10">
+        {/* <div className="absolute w-24 md:w-36 h-24 md:h-36 rounded-full bg-gradient-to-b from-[#5DFFFF]/30 to-[#DC00D3]/15 flex items-center justify-center z-10">
           <div className="text-white text-3xl md:text-4xl font-bold">Σ</div>
-        </div>
+        </div> */}
 
         {/* Rotating orbit wrapper */}
-        <div className="absolute w-full h-full animate-spin-slow">
+        {/* <div className="absolute w-full h-full animate-spin-slow">
           {icons.map((item, i) => {
             const angle = (360 / icons.length) * i;
             const radius = 150; // smaller for mobile, adjusted in CSS
@@ -85,8 +85,8 @@ const AboutSection = () => {
               </div>
             );
           })}
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
 
       {/* Tailwind animation keyframe */}
       <style>

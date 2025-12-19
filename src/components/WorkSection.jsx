@@ -26,7 +26,7 @@ export default function WorkSection() {
       },
     },
     {
-      title: "Attendance Management System",
+      title: "Scan&Mark",
       description:
         "A web application for tracking student attendance. It allows administrators to record, manage, and analyze attendance data efficiently while ensuring accurate reporting and streamlined academic record management.",
       image: "/Attendance.png",
