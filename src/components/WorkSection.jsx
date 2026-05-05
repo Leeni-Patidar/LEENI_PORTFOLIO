@@ -73,7 +73,7 @@ const projects = [
 
 export default function WorkSection() {
   return (
-    <section id="work" className="relative overflow-hidden bg-[#090512] px-6 py-24 sm:py-28 lg:py-32">
+    <section id="work" className="relative overflow-hidden px-6 py-24 sm:py-28 lg:py-32">
       <div className="absolute left-0 top-16 h-72 w-72 rounded-full bg-[#5dffff]/10 blur-3xl" />
       <div className="absolute right-0 bottom-16 h-64 w-64 rounded-full bg-[#ae0ca7]/20 blur-3xl" />
 

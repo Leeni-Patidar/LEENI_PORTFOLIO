@@ -1,82 +1,78 @@
 import React from "react";
 import { Download } from "lucide-react";
 
+const details = [
+  { label: "Name", value: "Leeni Patidar" },
+  { label: "Email", value: "leenip04@gmail.com" },
+  { label: "Location", value: "Indore" },
+  { label: "Availability", value: "Open to opportunities", highlight: true },
+];
+
 const AboutSection = () => {
   return (
-    <section id="about" className="relative overflow-hidden bg-[#090512] px-6 py-24 sm:py-28 lg:py-32">
-      <div className="absolute left-[-10%] top-10 h-72 w-72 rounded-full bg-[#ae0ca7]/20 blur-3xl" />
-      <div className="absolute right-0 top-24 h-72 w-72 rounded-full bg-[#5dffff]/10 blur-3xl" />
+    <section
+      id="about"
+      className="relative overflow-hidden px-0 py-20 text-white sm:py-24 lg:min-h-screen lg:py-16"
+    >
+      <div className="absolute left-[42%] top-16 h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-[#ae0ca7]/15 blur-3xl" />
 
-      <div className="relative mx-auto max-w-7xl">
-        <div className="mb-14 text-center">
-          <div className="section-label mx-auto mb-5">My background and journey</div>
-          <div className="section-heading mx-auto max-w-3xl text-[#f9f9ff]">
-            <h2>About Me</h2>
+      <div className="relative mx-auto grid max-w-[1360px] items-center gap-10 lg:min-h-[calc(100vh-4rem)] lg:grid-cols-[0.95fr_1fr] lg:gap-12 lg:pr-6">
+        <div className="relative min-h-[32rem] overflow-hidden rounded-r-2xl border-y border-r border-white/10 bg-[#1d1b20]/85 shadow-[0_30px_110px_rgba(0,0,0,0.45)] sm:min-h-[38rem] lg:min-h-[40rem]">
+          <img
+            src="/profile.jpg"
+            alt="Shine Kyaw Kyaw Aung"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-white/5" />
+          <div className="absolute bottom-7 left-6 flex items-center gap-3 text-sm font-semibold text-white">
+            <span className="h-3.5 w-3.5 rounded-full bg-[#23d96b]" />
+            Available for work
           </div>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] xl:gap-10">
-          <div className="glass-card rounded-[32px] p-8 lg:p-10">
-            <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] items-center">
-              <div className="rounded-[28px] border border-white/10 bg-[#100425]/80 p-5 shadow-2xl">
-                <div className="relative overflow-hidden rounded-[28px] bg-[#120724] h-[360px]">
-                  <img
-                    src="/profile.jpg"
-                    alt="Leeni Patidar"
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <div className="mt-6 flex items-center justify-between rounded-3xl bg-[#0b0420]/90 p-4 border border-white/10">
-                  <div>
-                    <p className="text-sm uppercase tracking-[0.35em] text-[#9e9ef6]">Availability</p>
-                    <p className="mt-2 text-sm font-medium text-[#f8f8ff]">Open to opportunities</p>
-                  </div>
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#5dffff] to-[#ae0ca7] text-black">
-                    ✓
-                  </span>
-                </div>
-              </div>
-              <div className="space-y-6">
-                <div>
-                  <p className="text-sm uppercase tracking-[0.35em] text-[#9e9ef6]">Hello, I’m Leeni</p>
-                  <h3 className="mt-4 text-3xl font-bold text-white sm:text-4xl">A passionate software engineer</h3>
-                </div>
-                <p className="text-base leading-8 text-[#d9d9e5]">
-                  I build interactive web experiences with code, design, and thoughtful detail. I specialize in frontend development using React and Tailwind, and I enjoy working on full-stack applications with modern technologies like Node.js, PostgreSQL, and cloud tooling.
-                </p>
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <div className="rounded-3xl border border-white/10 bg-[#120724]/90 p-5">
-                    <p className="text-sm text-[#9e9ef6]">Location</p>
-                    <p className="mt-2 text-lg font-semibold text-white">Myanmar</p>
-                  </div>
-                  <div className="rounded-3xl border border-white/10 bg-[#120724]/90 p-5">
-                    <p className="text-sm text-[#9e9ef6]">Email</p>
-                    <p className="mt-2 text-lg font-semibold text-white">leenip04@gmail.com</p>
-                  </div>
-                </div>
-                <button
-                  onClick={() => window.open("/LEENI_RESUME.pdf", "_blank")}
-                  className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[#5dffff] to-[#ae0ca7] px-6 py-3 text-sm font-semibold text-black shadow-[0_20px_80px_rgba(93,255,255,0.22)] transition hover:scale-[1.02]"
+        <article className="mx-6 rounded-xl border border-white/10 bg-[#211d24]/95 p-7 shadow-[0_28px_100px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:p-10 lg:mx-0">
+          <div className="space-y-5 text-lg leading-8 text-[#d8d5dc] sm:text-xl sm:leading-9">
+            <p>
+              I'm a passionate software engineer with experience building web
+              applications and digital products. I specialize in frontend
+              development with React and Next.js, but I'm also comfortable
+              working with backend technologies.
+            </p>
+            <p>
+              My journey in tech started with a strong foundation in software
+              development. I've worked with various companies to create
+              intuitive, performant, and accessible digital experiences.
+            </p>
+            <p>
+              When I'm not coding, you can find me exploring new technologies,
+              contributing to open-source projects, and staying up-to-date with
+              the latest industry trends.
+            </p>
+          </div>
+
+          <div className="mt-9 grid gap-x-16 gap-y-6 sm:grid-cols-2">
+            {details.map((item) => (
+              <div key={item.label}>
+                <p className="text-base text-[#8d8793]">{item.label}</p>
+                <p
+                  className={`mt-1 text-base font-bold ${
+                    item.highlight ? "text-[#23d96b]" : "text-white"
+                  }`}
                 >
-                  <Download size={18} />
-                  Download Resume
-                </button>
+                  {item.value}
+                </p>
               </div>
-            </div>
+            ))}
           </div>
 
-          <div className="space-y-10">
-            <div className="glass-card rounded-[32px] p-10">
-              <h3 className="text-2xl font-semibold text-white">Who I am</h3>
-              <p className="mt-6 text-base leading-8 text-[#d9d9e5]">
-                I’m a software engineer with experience building scalable web apps and polished user experiences. I care deeply about performance, clean code, and elegant UI design.
-              </p>
-              <p className="mt-4 text-base leading-8 text-[#d9d9e5]">
-                My journey began in frontend development, and I now enjoy solving problems with both frontend and backend technologies. When I’m not coding, I explore new design systems and stay current with modern web trends.
-              </p>
-            </div>
-          </div>
-        </div>
+          <button
+            onClick={() => window.open("/LEENI_RESUME.pdf", "_blank")}
+            className="mt-9 inline-flex items-center gap-2 rounded-md bg-white/5 px-5 py-3 text-sm font-bold text-white transition hover:bg-white/10"
+          >
+            <Download size={16} />
+            Download Resume
+          </button>
+        </article>
       </div>
     </section>
   );

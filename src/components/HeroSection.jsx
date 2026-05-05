@@ -1,14 +1,71 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
-import ParticleBackground from "./ParticleBackground";
 
-const heroDots = Array.from({ length: 100 });
+const dotColumns = 19;
+const dotRows = 14;
+const heroDots = Array.from({ length: dotColumns * dotRows }, (_, index) => {
+  const col = index % dotColumns;
+  const row = Math.floor(index / dotColumns);
+  const pulse = (col * 11 + row * 7) % 5;
+  const size = 6 + pulse * 1.7;
+  const palette = ["#f04ad7", "#c64cff", "#e83ca5", "#9b4dff"];
+
+  return {
+    col,
+    row,
+    size,
+    color: palette[(col + row) % palette.length],
+    delay: (col * 0.04 + row * 0.07) % 1.2,
+  };
+});
 
 export default function HeroSection() {
+  const [dotCursor, setDotCursor] = useState(null);
+
   const scrollTo = (id) => {
     const section = document.getElementById(id);
     if (section) section.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleDotPointerMove = (event) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    setDotCursor({
+      x: (event.clientX - rect.left) / rect.width,
+      y: (event.clientY - rect.top) / rect.height,
+    });
+  };
+
+  const getDotMotion = (dot) => {
+    if (!dotCursor) {
+      return {
+        x: 0,
+        y: 0,
+        scale: 1,
+        opacity: 0.86,
+      };
+    }
+
+    const dotX = dot.col / (dotColumns - 1);
+    const dotY = dot.row / (dotRows - 1);
+    const dx = dotX - dotCursor.x;
+    const dy = dotY - dotCursor.y;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+    const radius = 0.2;
+
+    if (distance > radius) {
+      return { x: 0, y: 0, scale: 1, opacity: 0.82 };
+    }
+
+    const force = (radius - distance) / radius;
+    const angle = Math.atan2(dy, dx);
+
+    return {
+      x: Math.cos(angle) * force * 34,
+      y: Math.sin(angle) * force * 34,
+      scale: 1 + force * 1.45,
+      opacity: 1,
+    };
   };
 
   const containerVariants = {
@@ -33,8 +90,6 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="relative min-h-screen overflow-hidden bg-[#090512] text-white">
-      <ParticleBackground />
-
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(93,255,255,0.14),transparent_20%)] pointer-events-none" />
       <div className="absolute -top-24 right-20 h-96 w-96 rounded-full bg-[#ae0ca7]/20 blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-16 h-72 w-72 rounded-full bg-[#5dffff]/10 blur-3xl pointer-events-none" />
@@ -127,49 +182,42 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          <div className="relative mx-auto max-w-[540px] overflow-hidden rounded-[40px] border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-xl">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_25%)]" />
-            <div className="relative h-[520px] w-full">
-              <div className="absolute inset-0 grid grid-cols-10 gap-3 p-6">
-                {heroDots.map((_, index) => (
-                  <div
-                    key={index}
-                    className="rounded-full bg-gradient-to-br from-[#ff5faf] via-[#a53aff] to-[#5dffff] opacity-80 shadow-[0_0_18px_rgba(93,255,255,0.22)] animate-dot-float"
+          <motion.div
+            variants={itemVariants}
+            className="relative mx-auto h-[360px] w-full max-w-[640px] sm:h-[440px] lg:h-[520px]"
+          >
+            <div
+              className="relative grid h-full w-full place-items-center gap-x-4 gap-y-3 px-3 sm:gap-x-5 sm:gap-y-4"
+              style={{ gridTemplateColumns: `repeat(${dotColumns}, minmax(0, 1fr))` }}
+              onPointerMove={handleDotPointerMove}
+              onPointerLeave={() => setDotCursor(null)}
+            >
+              {heroDots.map((dot) => (
+                <motion.span
+                  key={`${dot.col}-${dot.row}`}
+                  className="block"
+                  initial={{ opacity: 0, scale: 0.4 }}
+                  animate={getDotMotion(dot)}
+                  transition={{
+                    type: "spring",
+                    stiffness: 220,
+                    damping: 18,
+                    mass: 0.45,
+                  }}
+                >
+                  <span
+                    className="block rounded-full animate-dot-float"
                     style={{
-                      width: index % 7 === 0 ? 10 : 6,
-                      height: index % 7 === 0 ? 10 : 6,
-                      animationDelay: `${(index % 10) * 0.05 + Math.floor(index / 10) * 0.04}s`,
+                      width: dot.size,
+                      height: dot.size,
+                      backgroundColor: dot.color,
+                      animationDelay: `${dot.delay}s`,
                     }}
                   />
-                ))}
-              </div>
-
-              <motion.div
-                className="absolute left-1/2 top-1/2 h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0a0614]/70 border border-white/10 shadow-[0_0_90px_rgba(174,12,167,0.18)]"
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ duration: 3, repeat: Infinity }}
-              />
-              <motion.div
-                className="absolute left-1/2 top-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#5dffff]/30"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-              />
-              <motion.div
-                className="absolute left-1/2 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white shadow-[0_0_18px_rgba(255,255,255,0.45)]"
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              />
-              <motion.div
-                className="absolute left-1/2 top-1/2 h-[220px] w-[220px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#ae0ca7]/25"
-                animate={{ rotate: -360 }}
-                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-              />
-
-              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex h-16 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5">
-                <div className="h-2 w-2 rounded-full bg-white/80 animate-bounce-slow" />
-              </div>
+                </motion.span>
+              ))}
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

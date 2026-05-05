@@ -3,7 +3,7 @@ import { Github, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#07040f] px-6 py-10 text-[#bdbde1]">
+    <footer className="border-t border-white/10 bg-[#07040f]/70 px-6 py-10 text-[#bdbde1] backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <p className="text-sm">Leeni Patidar © {new Date().getFullYear()}. All rights reserved.</p>
         <div className="flex items-center gap-4">
