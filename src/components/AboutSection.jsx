@@ -1,105 +1,83 @@
 import React from "react";
-
-// ✅ Import Flaticon.jpegs
-import bootstrap from "../assets/icons/bootstrap.jpeg";
-import css from "../assets/icons/css.jpeg";
-import express from "../assets/icons/express.jpeg";
-import figma from "../assets/icons/figma.jpeg";
-import github from "../assets/icons/github.jpeg";
-import html from "../assets/icons/html.jpeg";
-import javascript from "../assets/icons/javascript.jpeg";
-import mongodb from "../assets/icons/mongodb.jpeg";
-import mysql from "../assets/icons/mysql.jpeg";
-import node from "../assets/icons/node.jpeg";
-import postman from "../assets/icons/postman.jpeg";
-import reactIcon from "../assets/icons/react.jpeg";
-import tailwind from "../assets/icons/tailwind.jpeg";
-import vscode from "../assets/icons/vscode.jpeg";
-
-const icons = [
-  { icon: bootstrap, label: "Bootstrap" },
-  { icon: css, label: "CSS" },
-  { icon: express, label: "Express" },
-  { icon: figma, label: "Figma" },
-  { icon: github, label: "GitHub" },
-  { icon: html, label: "HTML" },
-  { icon: javascript, label: "JavaScript" },
-  { icon: mongodb, label: "MongoDB" },
-  { icon: mysql, label: "MySQL" },
-  { icon: node, label: "Node.js" },
-  { icon: postman, label: "Postman" },
-  { icon: reactIcon, label: "React" },
-  { icon: tailwind, label: "Tailwind CSS" },
-  { icon: vscode, label: "VS Code" },
-];
+import { Download } from "lucide-react";
 
 const AboutSection = () => {
   return (
-    <section
-      id="about"
-      className="relative py-28 px-6 flex flex-col items-center bg-[#100425] overflow-hidden"
-    >
-      {/* Decorative gradient background */}
-      
+    <section id="about" className="relative overflow-hidden bg-[#090512] px-6 py-24 sm:py-28 lg:py-32">
+      <div className="absolute left-[-10%] top-10 h-72 w-72 rounded-full bg-[#ae0ca7]/20 blur-3xl" />
+      <div className="absolute right-0 top-24 h-72 w-72 rounded-full bg-[#5dffff]/10 blur-3xl" />
 
-      {/* Heading */}
-      <h2 className="text-6xl md:text-7xl font-extrabold font-['Josefin_Sans'] heading  z-10">
-        About
-      </h2>
+      <div className="relative mx-auto max-w-7xl">
+        <div className="mb-14 text-center">
+          <div className="section-label mx-auto mb-5">My background and journey</div>
+          <div className="section-heading mx-auto max-w-3xl text-[#f9f9ff]">
+            <h2>About Me</h2>
+          </div>
+        </div>
 
-      {/* Description */}
-      <p className="mt-10 text-lg md:text-xl text-[#fafafa]/90 leading-8 md:leading-9 text-center max-w-4xl font-['Josefin_Sans'] z-10">
-       I am a  MERN Stack Developer skilled in React, Node.js, Express, and MongoDB. Passionate about writing clean, maintainable code, I focus on building responsive, accessible, and high-performance applications. With strong problem-solving and teamwork skills, I thrive in collaborative environments, delivering impactful digital solutions that enhance user experiences.
-      </p>
-
-      {/* Orbit icons container */}
-      {/* <div className="absolute w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(220,0,211,0.4),transparent)] blur-[200px] top-40 left-1/2 -translate-x-1/2"></div> */}
-      {/* <div className="relative  w-full max-w-[400px] md:max-w-[600px] h-[400px] md:h-[600px] flex justify-center items-center"> */}
-        {/* Central glowing circle */}
-        {/* <div className="absolute w-24 md:w-36 h-24 md:h-36 rounded-full bg-gradient-to-b from-[#5DFFFF]/30 to-[#DC00D3]/15 flex items-center justify-center z-10">
-          <div className="text-white text-3xl md:text-4xl font-bold">Σ</div>
-        </div> */}
-
-        {/* Rotating orbit wrapper */}
-        {/* <div className="absolute w-full h-full animate-spin-slow">
-          {icons.map((item, i) => {
-            const angle = (360 / icons.length) * i;
-            const radius = 150; // smaller for mobile, adjusted in CSS
-            const x = radius * Math.cos((angle * Math.PI) / 180);
-            const y = radius * Math.sin((angle * Math.PI) / 180);
-
-            return (
-              <div
-                key={i}
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hover:scale-110 transition-all duration-300"
-                style={{
-                  transform: `translate(${x}px, ${y}px)`,
-                }}
-                title={item.label}
-              >
-                <img
-                  src={item.icon}
-                  alt={item.label}
-                  className="w-10 h-10 md:w-12 md:h-12 drop-shadow-lg rounded-full"
-                />
+        <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] xl:gap-10">
+          <div className="glass-card rounded-[32px] p-8 lg:p-10">
+            <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] items-center">
+              <div className="rounded-[28px] border border-white/10 bg-[#100425]/80 p-5 shadow-2xl">
+                <div className="relative overflow-hidden rounded-[28px] bg-[#120724] h-[360px]">
+                  <img
+                    src="/profile.jpg"
+                    alt="Leeni Patidar"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div className="mt-6 flex items-center justify-between rounded-3xl bg-[#0b0420]/90 p-4 border border-white/10">
+                  <div>
+                    <p className="text-sm uppercase tracking-[0.35em] text-[#9e9ef6]">Availability</p>
+                    <p className="mt-2 text-sm font-medium text-[#f8f8ff]">Open to opportunities</p>
+                  </div>
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#5dffff] to-[#ae0ca7] text-black">
+                    ✓
+                  </span>
+                </div>
               </div>
-            );
-          })}
-        </div> */}
-      {/* </div> */}
+              <div className="space-y-6">
+                <div>
+                  <p className="text-sm uppercase tracking-[0.35em] text-[#9e9ef6]">Hello, I’m Leeni</p>
+                  <h3 className="mt-4 text-3xl font-bold text-white sm:text-4xl">A passionate software engineer</h3>
+                </div>
+                <p className="text-base leading-8 text-[#d9d9e5]">
+                  I build interactive web experiences with code, design, and thoughtful detail. I specialize in frontend development using React and Tailwind, and I enjoy working on full-stack applications with modern technologies like Node.js, PostgreSQL, and cloud tooling.
+                </p>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="rounded-3xl border border-white/10 bg-[#120724]/90 p-5">
+                    <p className="text-sm text-[#9e9ef6]">Location</p>
+                    <p className="mt-2 text-lg font-semibold text-white">Myanmar</p>
+                  </div>
+                  <div className="rounded-3xl border border-white/10 bg-[#120724]/90 p-5">
+                    <p className="text-sm text-[#9e9ef6]">Email</p>
+                    <p className="mt-2 text-lg font-semibold text-white">leenip04@gmail.com</p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => window.open("/LEENI_RESUME.pdf", "_blank")}
+                  className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[#5dffff] to-[#ae0ca7] px-6 py-3 text-sm font-semibold text-black shadow-[0_20px_80px_rgba(93,255,255,0.22)] transition hover:scale-[1.02]"
+                >
+                  <Download size={18} />
+                  Download Resume
+                </button>
+              </div>
+            </div>
+          </div>
 
-      {/* Tailwind animation keyframe */}
-      <style>
-        {`
-          @keyframes spin-slow {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-          }
-          .animate-spin-slow {
-            animation: spin-slow 30s linear infinite;
-          }
-        `}
-      </style>
+          <div className="space-y-10">
+            <div className="glass-card rounded-[32px] p-10">
+              <h3 className="text-2xl font-semibold text-white">Who I am</h3>
+              <p className="mt-6 text-base leading-8 text-[#d9d9e5]">
+                I’m a software engineer with experience building scalable web apps and polished user experiences. I care deeply about performance, clean code, and elegant UI design.
+              </p>
+              <p className="mt-4 text-base leading-8 text-[#d9d9e5]">
+                My journey began in frontend development, and I now enjoy solving problems with both frontend and backend technologies. When I’m not coding, I explore new design systems and stay current with modern web trends.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

@@ -1,7 +1,9 @@
 import React from "react";
 import Navigation from "./components/Navigation";
+import ScrollProgress from "./components/ScrollProgress";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
+import SkillsSection from "./components/SkillsSection";
 import WorkSection from "./components/WorkSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
@@ -9,20 +11,17 @@ import Experience from "./components/Experience";
 
 const Home = () => {
   return (
-    <div className="portfolio-gradient min-h-screen flex flex-col">
-      {/* Navbar */}
+    <div className="min-h-screen bg-[#090512] text-white">
+      <ScrollProgress />
       <Navigation />
-
-      {/* Main Sections */}
       <main className="flex-1">
         <HeroSection />
         <AboutSection />
+        <SkillsSection />
         <WorkSection />
-        <Experience/>
+        <Experience />
         <ContactSection />
       </main>
-
-      {/* Footer */}
       <Footer />
     </div>
   );

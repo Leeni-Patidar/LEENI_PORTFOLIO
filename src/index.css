@@ -7,6 +7,7 @@
 /* Apply Josefin Sans globally */
 body {
   font-family: 'Josefin Sans', sans-serif;
+  scroll-behavior: smooth;
 }
 
 
@@ -99,6 +100,107 @@ body {
   background: #f580f1;
 }
 
+/* Timeline dot styling */
+.timeline-dot {
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(135deg, #5dffff, #ae0ca7);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(93, 255, 255, 0.5);
+}
+
+.timeline-dot::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Glass card effect */
+.glass-card {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Section labels and headings */
+.section-label {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  color: #9e9ef6;
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #5dffff 0%, #ae0ca7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Skill bar animation */
+.skill-bar {
+  height: 6px;
+  background: #1a1625;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.skill-bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #5dffff, #ae0ca7);
+  border-radius: 3px;
+  transition: width 1s ease-out;
+}
+
+/* Project card hover effects */
+.project-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(93, 255, 255, 0.15);
+}
+
+/* Gradient button */
+.gradient-button {
+  padding: 8px 26px;
+  background: linear-gradient(65deg, #5DFFFF 10%, #AE0CA7 100%);
+  box-shadow: 0.3px 0.3px 0.3px rgba(0, 0, 0, 0.3);
+  border-radius: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gradient-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.gradient-button span {
+  color: white;
+  font-size: 18px;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 600;
+  line-height: 30px;
+  word-wrap: break-word;
+}
+
 /* Glassmorphism utilities */
 .glass {
   backdrop-filter: blur(10px);
@@ -114,4 +216,126 @@ body {
   background-image: linear-gradient(rgba(93, 255, 255, 0.1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(93, 255, 255, 0.1) 1px, transparent 1px);
   background-size: 50px 50px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: #c9c9ff;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.75rem;
+  backdrop-filter: blur(18px);
+}
+
+.section-heading h2 {
+  font-size: clamp(2.25rem, 1.9vw, 3.75rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+
+.glass-card {
+  background: rgba(12, 6, 25, 0.84);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+}
+
+.skill-bar {
+  height: 0.65rem;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.skill-bar span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #5dffff, #ae0ca7, #ff5fae);
+}
+
+.timeline-line {
+  background: linear-gradient(180deg, #5dffff 0%, #ae0ca7 50%, #ff5fae 100%);
+}
+
+.timeline-dot {
+  width: 1.05rem;
+  height: 1.05rem;
+  border-radius: 999px;
+  background: #090512;
+  border: 2px solid #5dffff;
+  box-shadow: 0 0 18px rgba(93, 255, 255, 0.2);
+}
+
+.animate-ring-spin {
+  animation: ringSpin 20s linear infinite;
+}
+
+@keyframes ringSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  background: #090512;
+  color: #f8f8ff;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dotFloat {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.95;
+  }
+  50% {
+    transform: translateY(-8px);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceSlow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.9s ease forwards;
+}
+
+.animate-dot-float {
+  animation: dotFloat 3.5s ease-in-out infinite alternate;
+}
+
+.animate-bounce-slow {
+  animation: bounceSlow 1.6s ease-in-out infinite;
 }
