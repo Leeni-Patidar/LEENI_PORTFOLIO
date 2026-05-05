@@ -69,7 +69,7 @@ export default function Navigation() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            ShineKKA
+            Leeni
           </motion.div>
 
           <div className="hidden items-center space-x-8 md:flex">
