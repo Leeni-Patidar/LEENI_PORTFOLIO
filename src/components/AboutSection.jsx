@@ -12,41 +12,48 @@ const AboutSection = () => {
   return (
     <section
       id="about"
-      className="relative overflow-hidden px-0 py-20 text-white sm:py-24 lg:min-h-screen lg:py-16"
+      className="relative overflow-hidden bg-black px-0 py-16 text-white sm:py-24 lg:min-h-screen lg:py-16"
     >
-      <div className="absolute left-[42%] top-16 h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-[#ae0ca7]/15 blur-3xl" />
+      <div className="absolute left-1/2 top-16 h-72 w-72 -translate-x-1/2 rounded-full bg-[#ae0ca7]/12 blur-3xl sm:h-[34rem] sm:w-[34rem]" />
 
-      <div className="relative mx-auto grid max-w-[1360px] items-center gap-10 lg:min-h-[calc(100vh-4rem)] lg:grid-cols-[0.95fr_1fr] lg:gap-12 lg:pr-6">
-        <div className="relative min-h-[32rem] overflow-hidden rounded-r-2xl border-y border-r border-white/10 bg-[#1d1b20]/85 shadow-[0_30px_110px_rgba(0,0,0,0.45)] sm:min-h-[38rem] lg:min-h-[40rem]">
-          <img
-            src="/profile.jpg"
-            alt="Shine Kyaw Kyaw Aung"
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-white/5" />
-          <div className="absolute bottom-7 left-6 flex items-center gap-3 text-sm font-semibold text-white">
-            <span className="h-3.5 w-3.5 rounded-full bg-[#23d96b]" />
-            Available for work
-          </div>
-        </div>
+      <div className="relative mx-auto grid max-w-[1360px] items-center gap-8 px-4 sm:px-6 lg:min-h-[calc(100vh-4rem)] lg:grid-cols-[0.95fr_1fr] lg:gap-12 lg:pl-0 lg:pr-6">
+        <div className="relative flex min-h-[24rem] items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-[#080808]/95 shadow-[0_30px_110px_rgba(0,0,0,0.45)] sm:min-h-[34rem] lg:min-h-[40rem] lg:rounded-l-none lg:rounded-r-2xl lg:border-l-0">
+  
+  <img
+    src="/profile.jpg"
+    alt="Leeni Patidar"
+    className="h-[78%] w-[78%] max-w-sm rounded-2xl object-cover sm:h-[70%] sm:w-[70%] lg:max-w-md"
+  />
 
-        <article className="mx-6 rounded-xl border border-white/10 bg-[#211d24]/95 p-7 shadow-[0_28px_100px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:p-10 lg:mx-0">
-          <div className="space-y-5 text-lg leading-8 text-[#d8d5dc] sm:text-xl sm:leading-9">
+  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-white/5" />
+
+  <div className="absolute bottom-7 left-6 flex items-center gap-3 text-sm font-semibold text-white">
+    <span className="h-3.5 w-3.5 rounded-full bg-[#23d96b]" />
+    Available for work
+  </div>
+</div>
+
+        <article className="rounded-xl border border-white/10 bg-[#080808]/95 p-6 shadow-[0_28px_100px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:p-10 lg:mx-0">
+          <div className="space-y-4 text-base leading-7 text-[#d8d5dc] sm:text-lg sm:leading-8">
             <p>
-              I'm a passionate software engineer with experience building web
-              applications and digital products. I specialize in frontend
-              development with React and Next.js, but I'm also comfortable
-              working with backend technologies.
+              I'm a passionate Full Stack Developer with strong expertise in frontend
+              development using React.js, creating modern, responsive, and user-friendly
+              web applications. I enjoy building clean UI designs and transforming ideas
+              into seamless digital experiences.
             </p>
+
             <p>
-              My journey in tech started with a strong foundation in software
-              development. I've worked with various companies to create
-              intuitive, performant, and accessible digital experiences.
+              Along with frontend development, I work with the MERN Stack and have
+              experience developing scalable backend systems using Node.js, Express.js,
+              MongoDB, and Python. I love solving real-world problems through efficient
+              and optimized code.
             </p>
+
             <p>
-              When I'm not coding, you can find me exploring new technologies,
-              contributing to open-source projects, and staying up-to-date with
-              the latest industry trends.
+              I'm constantly exploring new technologies, improving my development skills,
+              and building projects related to AI, web development, and cloud technologies.
+              My goal is to create impactful applications that combine performance,
+              functionality, and great user experience.
             </p>
           </div>
 
@@ -55,9 +62,8 @@ const AboutSection = () => {
               <div key={item.label}>
                 <p className="text-base text-[#8d8793]">{item.label}</p>
                 <p
-                  className={`mt-1 text-base font-bold ${
-                    item.highlight ? "text-[#23d96b]" : "text-white"
-                  }`}
+                  className={`mt-1 text-base font-bold ${item.highlight ? "text-[#23d96b]" : "text-white"
+                    }`}
                 >
                   {item.value}
                 </p>
@@ -67,7 +73,7 @@ const AboutSection = () => {
 
           <button
             onClick={() => window.open("/LEENI_RESUME.pdf", "_blank")}
-            className="mt-9 inline-flex items-center gap-2 rounded-md bg-white/5 px-5 py-3 text-sm font-bold text-white transition hover:bg-white/10"
+            className="mt-9 inline-flex w-full items-center justify-center gap-2 rounded-md bg-white/5 px-5 py-3 text-sm font-bold text-white transition hover:bg-white/10 sm:w-auto"
           >
             <Download size={16} />
             Download Resume

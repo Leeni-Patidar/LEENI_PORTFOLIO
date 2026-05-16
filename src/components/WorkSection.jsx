@@ -73,7 +73,7 @@ const projects = [
 
 export default function WorkSection() {
   return (
-    <section id="work" className="relative overflow-hidden px-6 py-24 sm:py-28 lg:py-32">
+    <section id="work" className="relative overflow-hidden bg-black px-4 py-16 sm:px-6 sm:py-24 lg:py-28">
       <div className="absolute left-0 top-16 h-72 w-72 rounded-full bg-[#5dffff]/10 blur-3xl" />
       <div className="absolute right-0 bottom-16 h-64 w-64 rounded-full bg-[#ae0ca7]/20 blur-3xl" />
 
@@ -83,7 +83,7 @@ export default function WorkSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-16 text-center"
+          className="mb-10 text-center sm:mb-16"
         >
           <div className="section-label mx-auto">Some of my recent work</div>
           <div className="section-heading mx-auto mt-6 max-w-3xl text-white">
@@ -91,7 +91,7 @@ export default function WorkSection() {
           </div>
         </motion.div>
 
-        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 sm:gap-6 xl:grid-cols-3">
           {projects.map((project, index) => (
             <ProjectCard key={index} project={project} index={index} />
           ))}

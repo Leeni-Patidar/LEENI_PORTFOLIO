@@ -58,21 +58,21 @@ export default function Navigation() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "border-b border-white/10 bg-[#07040f]/95 backdrop-blur-2xl shadow-lg"
-            : "border-b border-white/10 bg-[#07040f]/80 backdrop-blur-2xl"
+            ? "border-b border-white/10 bg-black/95 backdrop-blur-2xl shadow-lg"
+            : "border-b border-white/10 bg-black/80 backdrop-blur-2xl"
         } text-white`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
           <motion.div
             onClick={() => scrollToSection("home")}
-            className="cursor-pointer text-lg font-semibold tracking-[0.15em] text-transparent bg-clip-text bg-gradient-to-r from-[#5dffff] via-[#ae0ca7] to-[#ff5fae] transition hover:scale-[1.02]"
+            className="cursor-pointer text-lg font-semibold tracking-[0.12em] text-transparent bg-clip-text bg-gradient-to-r from-[#5dffff] via-[#ae0ca7] to-[#ff5fae] transition hover:scale-[1.02]"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            ShineKKA
+            Leeni
           </motion.div>
 
-          <div className="hidden items-center space-x-8 md:flex">
+          <div className="hidden items-center gap-5 lg:flex xl:gap-8">
             {navItems.map((item) => (
               <motion.button
                 key={item.id}
@@ -98,7 +98,7 @@ export default function Navigation() {
           </div>
 
           <motion.button
-            className="md:hidden text-[#d9d9e0] hover:text-[#ae0ca7]"
+            className="text-[#d9d9e0] hover:text-[#ae0ca7] lg:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
             whileHover={{ scale: 1.1 }}
@@ -115,7 +115,7 @@ export default function Navigation() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden border-t border-white/10 bg-[#07040f]/95 px-6 py-4"
+              className="border-t border-white/10 bg-black/95 px-4 py-4 sm:px-6 lg:hidden"
             >
               <div className="flex flex-col gap-3">
                 {navItems.map((item, index) => (

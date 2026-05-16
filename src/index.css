@@ -5,9 +5,19 @@
 @import "tailwindcss";
 
 /* Apply Josefin Sans globally */
+html,
+body,
+#root {
+  min-height: 100%;
+  background: #000;
+}
+
 body {
+  margin: 0;
+  overflow-x: hidden;
   font-family: 'Josefin Sans', sans-serif;
   scroll-behavior: smooth;
+  color: #f8f8ff;
 }
 
 
@@ -88,7 +98,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #100425;
+  background: #000;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -132,13 +142,15 @@ body {
 .section-label {
   font-size: 14px;
   font-weight: 600;
-  letter-spacing: 0.35em;
+  letter-spacing: 0.18em;
   color: #9e9ef6;
   text-transform: uppercase;
+  text-align: center;
+  max-width: 100%;
 }
 
 .section-heading h2 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2rem, 8vw, 4rem);
   font-weight: 700;
   line-height: 1.1;
   background: linear-gradient(135deg, #5dffff 0%, #ae0ca7 100%);
@@ -231,7 +243,7 @@ html {
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.06);
   color: #c9c9ff;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   font-weight: 600;
   font-size: 0.75rem;
@@ -239,9 +251,9 @@ html {
 }
 
 .section-heading h2 {
-  font-size: clamp(2.25rem, 1.9vw, 3.75rem);
+  font-size: clamp(2rem, 8vw, 3.75rem);
   font-weight: 800;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
   color: #ffffff;
 }
 
@@ -274,7 +286,7 @@ html {
   width: 1.05rem;
   height: 1.05rem;
   border-radius: 999px;
-  background: #090512;
+  background: #000;
   border: 2px solid #5dffff;
   box-shadow: 0 0 18px rgba(93, 255, 255, 0.2);
 }
@@ -292,10 +304,6 @@ html {
   }
 }
 
-body {
-  background: #090512;
-  color: #f8f8ff;
-}
 
 @keyframes fadeInUp {
   from {

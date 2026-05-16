@@ -89,22 +89,22 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden bg-[#090512] text-white">
+    <section id="home" className="relative min-h-screen overflow-hidden bg-black text-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(93,255,255,0.14),transparent_20%)] pointer-events-none" />
-      <div className="absolute -top-24 right-20 h-96 w-96 rounded-full bg-[#ae0ca7]/20 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-16 h-72 w-72 rounded-full bg-[#5dffff]/10 blur-3xl pointer-events-none" />
+      <div className="absolute -top-24 right-0 h-72 w-72 rounded-full bg-[#ae0ca7]/15 blur-3xl pointer-events-none sm:right-20 sm:h-96 sm:w-96" />
+      <div className="absolute bottom-0 left-0 h-56 w-56 rounded-full bg-[#5dffff]/10 blur-3xl pointer-events-none sm:left-16 sm:h-72 sm:w-72" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 py-24 lg:py-28">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 pb-16 pt-24 sm:px-6 sm:py-24 lg:py-28">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] items-center"
+          className="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10"
         >
-          <div className="space-y-8">
+          <div className="space-y-7 sm:space-y-8">
             <motion.div
               variants={itemVariants}
-              className="section-label inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm tracking-[0.24em] text-[#f5f5ff] backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.18)]"
+              className="section-label inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs text-[#f5f5ff] backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.18)] sm:text-sm"
             >
               <span className="mr-3 inline-flex h-2.5 w-2.5 rounded-full bg-[#5dffff] animate-pulse" />
               Software Engineer 
@@ -117,20 +117,20 @@ export default function HeroSection() {
               <div className="space-y-3">
                 <motion.p
                   variants={itemVariants}
-                  className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight tracking-tight"
+                  className="text-3xl font-semibold leading-tight tracking-normal sm:text-5xl lg:text-6xl"
                 >
                   Hi, I'm
                 </motion.p>
                 <motion.h1
                   variants={itemVariants}
-                  className="text-5xl sm:text-6xl lg:text-[5rem] font-black leading-[0.95] tracking-[-0.04em] text-transparent bg-clip-text bg-gradient-to-r from-[#a320f7] via-[#e6299d] to-[#ff5f7f]"
+                  className="text-4xl font-black leading-tight tracking-normal text-transparent bg-clip-text bg-gradient-to-r from-[#a320f7] via-[#e6299d] to-[#ff5f7f] sm:text-6xl lg:text-[5rem] lg:leading-[0.95]"
                 >
                   Leeni Patidar
                 </motion.h1>
               </div>
               <motion.p
                 variants={itemVariants}
-                className="max-w-xl text-base sm:text-lg leading-8 text-[#d8d8de]"
+                className="max-w-xl text-base leading-7 text-[#d8d8de] sm:text-lg sm:leading-8"
               >
                 I craft exceptional digital experiences with code, creativity, and a passion for innovation. I build modern portfolio sites and web applications with interactive motion and polished UI.
               </motion.p>
@@ -142,7 +142,7 @@ export default function HeroSection() {
             >
               <motion.button
                 onClick={() => scrollTo("work")}
-                className="gradient-button inline-flex min-w-[180px] items-center justify-center rounded-full px-6 py-3 font-semibold text-white shadow-[0_20px_60px_rgba(174,12,167,0.25)] transition duration-300 hover:scale-[1.02]"
+                className="gradient-button inline-flex w-full items-center justify-center rounded-full px-6 py-3 font-semibold text-white shadow-[0_20px_60px_rgba(174,12,167,0.25)] transition duration-300 hover:scale-[1.02] sm:w-auto sm:min-w-[180px]"
                 whileHover={{ scale: 1.05, boxShadow: "0 25px 80px rgba(174,12,167,0.3)" }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -150,7 +150,7 @@ export default function HeroSection() {
               </motion.button>
               <motion.button
                 onClick={() => scrollTo("contact")}
-                className="inline-flex min-w-[180px] items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 py-3 font-semibold text-[#f4f4ff] transition duration-300 hover:bg-white/15 hover:text-[#5dffff]"
+                className="inline-flex w-full items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 py-3 font-semibold text-[#f4f4ff] transition duration-300 hover:bg-white/15 hover:text-[#5dffff] sm:w-auto sm:min-w-[180px]"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -184,7 +184,7 @@ export default function HeroSection() {
 
           <motion.div
             variants={itemVariants}
-            className="relative mx-auto h-[360px] w-full max-w-[640px] sm:h-[440px] lg:h-[520px]"
+            className="relative mx-auto h-[260px] w-full max-w-[640px] sm:h-[420px] lg:h-[520px]"
           >
             <div
               className="relative grid h-full w-full place-items-center gap-x-4 gap-y-3 px-3 sm:gap-x-5 sm:gap-y-4"

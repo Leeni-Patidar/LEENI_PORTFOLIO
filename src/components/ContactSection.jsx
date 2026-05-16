@@ -3,9 +3,8 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import { Mail, Linkedin, Github, CheckCircle } from "lucide-react";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { motion } from "framer-motion";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -40,6 +39,7 @@ export default function ContactSection() {
           draggable: true,
         });
         setFormData({ name: "", email: "", subject: "", message: "" });
+        setSuccess("Message sent successfully.");
         setLoading(false);
       },
       () => {
@@ -57,61 +57,78 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative overflow-hidden px-6 py-16 text-white lg:py-20">
+    <section id="contact" className="relative overflow-hidden bg-black px-4 py-16 text-white sm:px-6 lg:py-20">
       <div className="absolute left-0 top-24 h-72 w-72 rounded-full bg-[#5dffff]/10 blur-3xl" />
       <div className="absolute right-0 bottom-24 h-72 w-72 rounded-full bg-[#ae0ca7]/15 blur-3xl" />
 
       <div className="relative mx-auto max-w-6xl">
         <div className="mb-8 text-center">
-          <div className="section-label mx-auto">Let’s work together</div>
+          <div className="section-label mx-auto">Let's work together</div>
           <div className="section-heading mx-auto mt-4 max-w-3xl text-white">
             <h2>Get In Touch</h2>
           </div>
         </div>
 
         <div className="grid gap-5 lg:grid-cols-[0.85fr_1fr]">
-          <div className="glass-card rounded-[28px] border border-white/10 bg-[#0b0615]/90 p-6 shadow-2xl backdrop-blur-xl">
-            
-            <h3 className="mt-3 text-2xl font-semibold text-white">Ready to work on your next project?</h3>
+          <div className="glass-card rounded-2xl border border-white/10 bg-[#050505]/95 p-5 shadow-2xl backdrop-blur-xl sm:p-6">
+            <h3 className="mt-3 text-2xl font-semibold text-white">
+              Ready to work on your next project?
+            </h3>
             <p className="mt-3 text-base leading-7 text-[#cfcfe8]">
-              I’m available for freelance and full-time work. Send a message and I’ll get back to you shortly.
+              I'm available for freelance and full-time work. Send a message and I'll get back to you shortly.
             </p>
 
             <div className="mt-6 space-y-3">
-              <div className="flex items-center gap-3 rounded-3xl border border-white/10 bg-[#090512]/90 p-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#5dffff] to-[#ae0ca7] text-black">
-                  <Mail size={20} />
+              {[
+                {
+                  icon: Mail,
+                  label: "Email",
+                  href: "mailto:leenip04@gmail.com",
+                  text: "leenip04@gmail.com",
+                  breakClass: "break-words",
+                },
+                {
+                  icon: Linkedin,
+                  label: "LinkedIn",
+                  href: "https://www.linkedin.com/in/leeni-patidar-128274318/",
+                  text: "linkedin.com/in/leeni-patidar-128274318/",
+                  breakClass: "break-all",
+                },
+                {
+                  icon: Github,
+                  label: "GitHub",
+                  href: "https://github.com/Leeni-Patidar",
+                  text: "github.com/Leeni-Patidar",
+                  breakClass: "break-all",
+                },
+              ].map((item) => (
+                <div key={item.label} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-black p-3">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#5dffff] to-[#ae0ca7] text-black sm:h-12 sm:w-12">
+                    <item.icon size={20} />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-sm text-[#9e9ef6]">{item.label}</p>
+                    <a
+                      href={item.href}
+                      target={item.href.startsWith("http") ? "_blank" : undefined}
+                      rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      className={`${item.breakClass} text-base font-medium text-white transition hover:text-[#5dffff]`}
+                    >
+                      {item.text}
+                    </a>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-sm text-[#9e9ef6]">Email</p>
-                  <p className="text-base font-medium text-white">leenip04@gmail.com</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 rounded-3xl border border-white/10 bg-[#090512]/90 p-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#5dffff] to-[#ae0ca7] text-black">
-                  <Linkedin size={20} />
-                </div>
-                <div>
-                  <p className="text-sm text-[#9e9ef6]">LinkedIn</p>
-                  <p className="text-base font-medium text-white">linkedin.com/in/shinekyawkyawaung</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 rounded-3xl border border-white/10 bg-[#090512]/90 p-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#5dffff] to-[#ae0ca7] text-black">
-                  <Github size={20} />
-                </div>
-                <div>
-                  <p className="text-sm text-[#9e9ef6]">GitHub</p>
-                  <p className="text-base font-medium text-white">github.com/shinekyw</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 rounded-3xl border border-white/10 bg-[#090512]/90 p-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#5dffff] to-[#ae0ca7] text-black">
+              ))}
+
+              <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-black p-3">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#5dffff] to-[#ae0ca7] text-black sm:h-12 sm:w-12">
                   <CheckCircle size={20} />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="text-sm text-[#9e9ef6]">Current Status</p>
-                  <p className="text-base font-medium text-white">Available for freelance work and full-time opportunities</p>
+                  <p className="text-base font-medium text-white">
+                    Available for freelance work and full-time opportunities
+                  </p>
                 </div>
               </div>
             </div>
@@ -119,49 +136,38 @@ export default function ContactSection() {
 
           <form
             onSubmit={handleSubmit}
-            className="glass-card rounded-[28px] border border-white/10 bg-[#0b0615]/90 p-6 shadow-2xl backdrop-blur-xl sm:p-7"
+            className="glass-card rounded-2xl border border-white/10 bg-[#050505]/95 p-5 shadow-2xl backdrop-blur-xl sm:p-7"
           >
             <div className="space-y-4">
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                value={formData.name}
-                onChange={handleChange}
-                className="w-full rounded-3xl border border-white/10 bg-[#100518]/90 px-5 py-3 text-white placeholder:text-[#8f8fb3] focus:border-[#5dffff] focus:outline-none"
-                required
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full rounded-3xl border border-white/10 bg-[#100518]/90 px-5 py-3 text-white placeholder:text-[#8f8fb3] focus:border-[#5dffff] focus:outline-none"
-                required
-              />
-              <input
-                type="text"
-                name="subject"
-                placeholder="Subject"
-                value={formData.subject}
-                onChange={handleChange}
-                className="w-full rounded-3xl border border-white/10 bg-[#100518]/90 px-5 py-3 text-white placeholder:text-[#8f8fb3] focus:border-[#5dffff] focus:outline-none"
-                required
-              />
+              {[
+                { type: "text", name: "name", placeholder: "Your Name" },
+                { type: "email", name: "email", placeholder: "Your Email" },
+                { type: "text", name: "subject", placeholder: "Subject" },
+              ].map((field) => (
+                <input
+                  key={field.name}
+                  type={field.type}
+                  name={field.name}
+                  placeholder={field.placeholder}
+                  value={formData[field.name]}
+                  onChange={handleChange}
+                  className="w-full rounded-2xl border border-white/10 bg-black px-5 py-3 text-white placeholder:text-[#8f8fb3] focus:border-[#5dffff] focus:outline-none"
+                  required
+                />
+              ))}
               <textarea
                 name="message"
                 placeholder="Your Message"
                 value={formData.message}
                 onChange={handleChange}
                 rows={4}
-                className="w-full rounded-3xl border border-white/10 bg-[#100518]/90 px-5 py-3 text-white placeholder:text-[#8f8fb3] focus:border-[#5dffff] focus:outline-none resize-none"
+                className="w-full resize-none rounded-2xl border border-white/10 bg-black px-5 py-3 text-white placeholder:text-[#8f8fb3] focus:border-[#5dffff] focus:outline-none"
                 required
               />
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full rounded-full bg-gradient-to-r from-[#5dffff] to-[#ae0ca7] px-6 py-3 text-base font-semibold text-black transition hover:opacity-95"
+                className="w-full rounded-full bg-gradient-to-r from-[#5dffff] to-[#ae0ca7] px-6 py-3 text-base font-semibold text-black transition hover:opacity-95 disabled:cursor-not-allowed disabled:opacity-70"
               >
                 {loading ? "Sending..." : "Send Message"}
               </button>

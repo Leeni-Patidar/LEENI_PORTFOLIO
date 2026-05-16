@@ -3,24 +3,26 @@ import { motion } from "framer-motion";
 
 const skillsData = {
   frontend: [
-    { name: "React",  icon: "⚛️" },
-    { name: "Tailwind CSS",  icon: "🎨" },
-    { name: "JavaScript",  icon: "🟨" },
-    { name: "HTML/CSS",  icon: "🌐" },
+    { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+    { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+    { name: "Bootstrap", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
+    { name: "HTML/CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+    { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+    
   ],
   backend: [
-    { name: "Node.js",  icon: "🟢" },
-    { name: "Express.js",  icon: "🚀" },
-    { name: "Python",  icon: "🐍" },
-    { name: "MongoDB",  icon: "🍃" },
-    { name: "MySQL",  icon: "🔺" },
+    { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+    { name: "Express.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg", invert: true },
+    { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+    { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+    { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
   ],
   tools: [
-    { name: "Git",  icon: "📚" },
-    { name: "Docker",  icon: "🐳" },
-    { name: "AWS",  icon: "☁️" },
-    { name: "VS Code",  icon: "💻" },
-    { name: "Postman",  icon: "🐧" },
+    { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+    { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+    { name: "AWS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg", invert: true },
+    { name: "VS Code", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+    { name: "Postman", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" },
   ],
 };
 
@@ -45,7 +47,7 @@ const itemVariants = {
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="relative overflow-hidden px-6 py-24 sm:py-28 lg:py-32">
+    <section id="skills" className="relative overflow-hidden bg-black px-4 py-16 sm:px-6 sm:py-24 lg:py-28">
       <div className="absolute left-0 top-16 h-72 w-72 rounded-full bg-[#5dffff]/10 blur-3xl" />
       <div className="absolute right-0 bottom-16 h-64 w-64 rounded-full bg-[#ae0ca7]/20 blur-3xl" />
 
@@ -68,13 +70,13 @@ export default function SkillsSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+          className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3"
         >
           {Object.entries(skillsData).map(([category, skills]) => (
             <motion.div
               key={category}
               variants={itemVariants}
-              className="glass-card rounded-[32px] border border-white/10 bg-[#0b0615]/90 p-8 shadow-2xl backdrop-blur-xl"
+              className="glass-card rounded-2xl border border-white/10 bg-[#050505]/95 p-5 shadow-2xl backdrop-blur-xl sm:p-8"
             >
               <h3 className="mb-6 text-xl font-semibold capitalize text-white">
                 {category}
@@ -91,7 +93,14 @@ export default function SkillsSection() {
                   >
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-3">
-                        <span className="text-lg">{skill.icon}</span>
+                        <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/10">
+                          <img
+                            src={skill.icon}
+                            alt={`${skill.name} logo`}
+                            className={`h-5 w-5 object-contain ${skill.invert ? "brightness-0 invert" : ""}`}
+                            loading="lazy"
+                          />
+                        </span>
                         <span className="text-sm font-medium text-[#cfcfe8]">
                           {skill.name}
                         </span>

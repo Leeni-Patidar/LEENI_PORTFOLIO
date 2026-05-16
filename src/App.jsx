@@ -12,9 +12,9 @@ import ParticleBackground from "./components/ParticleBackground";
 
 const Home = () => {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#090512] text-white">
+    <div className="relative min-h-screen overflow-x-hidden bg-black text-white">
       <ParticleBackground />
-      <div className="fixed inset-0 z-0 bg-[radial-gradient(circle_at_top_left,rgba(93,255,255,0.14),transparent_22%),radial-gradient(circle_at_top_right,rgba(174,12,167,0.18),transparent_26%),radial-gradient(circle_at_bottom_left,rgba(93,255,255,0.08),transparent_24%)] pointer-events-none" />
+      <div className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(circle_at_top_left,rgba(93,255,255,0.10),transparent_22%),radial-gradient(circle_at_top_right,rgba(174,12,167,0.12),transparent_26%),radial-gradient(circle_at_bottom_left,rgba(93,255,255,0.06),transparent_24%)]" />
       <ScrollProgress />
       <Navigation />
       <main className="relative z-10 flex-1">
