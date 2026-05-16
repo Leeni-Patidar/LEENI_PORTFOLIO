@@ -16,13 +16,13 @@ const AboutSection = () => {
     >
       <div className="absolute left-1/2 top-16 h-72 w-72 -translate-x-1/2 rounded-full bg-[#ae0ca7]/12 blur-3xl sm:h-[34rem] sm:w-[34rem]" />
 
-      <div className="relative mx-auto grid max-w-[1360px] items-center gap-8 px-4 sm:px-6 lg:min-h-[calc(100vh-4rem)] lg:grid-cols-[0.95fr_1fr] lg:gap-12 lg:pl-0 lg:pr-6">
+      <div className="relative mx-auto grid max-w-[1360px] items-center gap-8 px-4 sm:px-6 lg:min-h-[calc(100vh-4rem)] lg:grid-cols-[1fr_3fr] lg:gap-8 lg:pl-0 lg:pr-6">
         <div className="relative flex min-h-[24rem] items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-[#080808]/95 shadow-[0_30px_110px_rgba(0,0,0,0.45)] sm:min-h-[34rem] lg:min-h-[40rem] lg:rounded-l-none lg:rounded-r-2xl lg:border-l-0">
   
   <img
     src="/profile.jpg"
     alt="Leeni Patidar"
-    className="h-[78%] w-[78%] max-w-sm rounded-2xl object-cover sm:h-[70%] sm:w-[70%] lg:max-w-md"
+    className="h-[50%] w-[50%] max-w-sm rounded-2xl object-cover sm:h-[70%] sm:w-[70%] lg:h-[58%] lg:w-[78%] lg:max-w-xs"
   />
 
   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-white/5" />
@@ -33,7 +33,7 @@ const AboutSection = () => {
   </div>
 </div>
 
-        <article className="rounded-xl border border-white/10 bg-[#080808]/95 p-6 shadow-[0_28px_100px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:p-10 lg:mx-0">
+        <article className="rounded-xl border border-white/10 bg-[#080808]/95 p-6 shadow-[0_28px_100px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:p-10 lg:mx-0 lg:p-12">
           <div className="space-y-4 text-base leading-7 text-[#d8d5dc] sm:text-lg sm:leading-8">
             <p>
               I'm a passionate Full Stack Developer with strong expertise in frontend

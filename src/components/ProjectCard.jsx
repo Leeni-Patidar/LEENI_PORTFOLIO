@@ -93,16 +93,18 @@ const ProjectCard = ({ project, index }) => {
           >
             <Github size={18} /> Code
           </motion.a>
-          <motion.a
-            href={project.links.live}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#5dffff] to-[#ae0ca7] px-4 py-2 text-sm font-semibold text-black transition hover:opacity-95 hover:shadow-lg"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Live Demo <ExternalLink size={16} />
-          </motion.a>
+          {project.links.live && (
+            <motion.a
+              href={project.links.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#5dffff] to-[#ae0ca7] px-4 py-2 text-sm font-semibold text-black transition hover:opacity-95 hover:shadow-lg"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Live Demo <ExternalLink size={16} />
+            </motion.a>
+          )}
         </motion.div>
       </div>
     </motion.div>

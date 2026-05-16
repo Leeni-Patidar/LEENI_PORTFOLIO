@@ -4,69 +4,95 @@ import ProjectCard from "./ProjectCard";
 
 const projects = [
   {
-    title: "E-commerce Platform",
+    title: "GreenCart",
     description:
-      "A full-stack e-commerce platform built with Next.js, Stripe, and Prisma for a polished shopping experience.",
+      "A full-stack JavaScript application organized with separate frontend and backend workspaces.",
+    image: "/Collex.png",
+    tags: ["React", "Node.js", "Express", "MongoDB"],
+    links: {
+      github: "https://github.com/Leeni-Patidar/GreenCart",
+    },
+  },
+   {
+    title: "StudyFusion",
+    description:
+      "A study-focused web application for managing learning resources, study material, and student workflows.",
+    image: "/Collex.png",
+    tags: ["React", "Python"],
+    links: {
+      github: "https://github.com/Leeni-Patidar/StudyFusion",
+    },
+  },
+  {
+    title: "NoteMindAI",
+    description:
+      "An AI-powered notes application that helps users create, organize, and work with smarter study notes.",
+    image: "/Collex.png",
+    tags: ["Python", "GroqAPI", "HuggingFace"],
+    links: {
+      github: "https://github.com/Leeni-Patidar/NoteMindAI",
+    },
+  },
+  {
+    title: "Education-Application",
+    description:
+      "A full-stack education platform with structured pages and backend support for learning-related features.",
+    image: "/Collex.png",
+    tags: ["React", "Node.js", "Express", "MongoDB"],
+    links: {
+      github: "https://github.com/Leeni-Patidar/Education-Application",
+    },
+  },
+   {
+    title: "BloomingBasket",
+    description:
+      "A flower shopping platform with product browsing and a full-stack structure for online ordering.",
     image: "/BloomingBasket.png",
-    tags: ["React", "Node.js", "MongoDB"],
+    tags: ["React", "Node.js", "Express", "MongoDB"],
     links: {
       github: "https://github.com/Leeni-Patidar/BloomingBasket",
       live: "https://bloomingbasket-client.onrender.com",
     },
   },
-  {
-    title: "Task Management App",
+    {
+    title: "Sip Chill",
     description:
-      "A collaborative task management application with real-time updates and intuitive project controls.",
+      "A stylish cafe and beverage website with a polished frontend experience and responsive pages.",
     image: "/Sip&Chill.png",
-    tags: ["React", "MySQL", "Tailwind"],
+    tags: ["React", "Vite", "JavaScript", "CSS"],
     links: {
       github: "https://github.com/Leeni-Patidar/Sip-Chill",
       live: "https://sip-chill.vercel.app/",
     },
   },
-  {
-    title: "AI Content Generator",
+    {
+    title: "Multivon",
     description:
-      "An AI-powered content creation tool that generates rich writing using modern AI models.",
+      "A full-stack JavaScript application organized with separate frontend and backend workspaces.",
+    image: "/Collex.png",
+    tags: ["React", "Node.js", "Express", "MongoDB"],
+    links: {
+      github: "https://github.com/Leeni-Patidar/Multivon",
+    },
+  },
+    {
+    title: "Fit Plan Hub",
+    description:
+      "A fitness planning web app for organizing workouts, goals, and healthy routines in one place.",
+    image: "/Collex.png",
+    tags: ["React", "JavaScript", "CSS"],
+    links: {
+      github: "https://github.com/Leeni-Patidar/Fit-Plan-Hub",
+    },
+  },
+  {
+    title: "Scan and Mark",
+    description:
+      "A scan-based marking system for recording and managing attendance with a practical dashboard flow.",
     image: "/Attendance.png",
-    tags: ["React", "OpenAI", "Node.js"],
+    tags: ["React", "Node.js", "Express", "MongoDB"],
     links: {
-      github: "https://github.com/Leeni-Patidar/Attendance-Management-System",
-      live: "#",
-    },
-  },
-  {
-    title: "Fitness Tracker",
-    description:
-      "A mobile-first fitness tracking dashboard built with data visualizations and support for workout logging.",
-    image: "/BloomingBasket.png",
-    tags: ["React", "Chart.js", "API"],
-    links: {
-      github: "https://github.com/Leeni-Patidar/Fitness-Tracker",
-      live: "#",
-    },
-  },
-  {
-    title: "Weather Dashboard",
-    description:
-      "A responsive weather dashboard with forecast charts and current conditions powered by API integration.",
-    image: "/Sip&Chill.png",
-    tags: ["React", "API", "CSS"],
-    links: {
-      github: "https://github.com/Leeni-Patidar/Weather-Dashboard",
-      live: "#",
-    },
-  },
-  {
-    title: "Portfolio Website",
-    description:
-      "A modern portfolio website showcasing projects, skills, and experience with a polished dark theme.",
-    image: "/Attendance.png",
-    tags: ["Next.js", "Tailwind CSS", "UI"],
-    links: {
-      github: "https://github.com/Leeni-Patidar/Portfolio",
-      live: "#",
+      github: "https://github.com/Leeni-Patidar/Scan-and-Mark",
     },
   },
 ];
@@ -87,7 +113,7 @@ export default function WorkSection() {
         >
           <div className="section-label mx-auto">Some of my recent work</div>
           <div className="section-heading mx-auto mt-6 max-w-3xl text-white">
-            <h2>Featured Projects</h2>
+            <h2>GitHub Projects</h2>
           </div>
         </motion.div>
 
