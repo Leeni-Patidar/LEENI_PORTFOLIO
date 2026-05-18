@@ -6,9 +6,9 @@ const projects = [
   {
     title: "GreenCart",
     description:
-      "A full-stack JavaScript application organized with separate frontend and backend workspaces.",
+      "SmartCart AI is a production-grade AI-powered grocery commerce platform built with the MERN stack, featuring intelligent recipe-to-cart automation, semantic product search, personalized recommendations, secure authentication, real-time order tracking, online payments, and scalable cloud deployment with Docker and CI/CD integration.",
     image: "/Collex.png",
-    tags: ["React", "Node.js", "Express", "MongoDB"],
+    tags: ["React", "Node.js", "Express", "MongoDB" ,"Python", "AI"],
     links: {
       github: "https://github.com/Leeni-Patidar/GreenCart",
     },
@@ -16,31 +16,32 @@ const projects = [
    {
     title: "StudyFusion",
     description:
-      "A study-focused web application for managing learning resources, study material, and student workflows.",
-    image: "/Collex.png",
-    tags: ["React", "Python"],
+      "An AI-powered learning platform that generates questions, notes, images, and chatbot-based learning assistance, helping students study smarter through personalized, interactive, and automated educational content generation",
+    image: "/StudyFusion.png",
+    tags: ["React", "Python", "ChromaDB", "AWS", "CI/CD Pipeline"],
     links: {
       github: "https://github.com/Leeni-Patidar/StudyFusion",
     },
   },
   {
-    title: "NoteMindAI",
+    title: "EduSmart",
     description:
-      "An AI-powered notes application that helps users create, organize, and work with smarter study notes.",
-    image: "/Collex.png",
-    tags: ["Python", "GroqAPI", "HuggingFace"],
+      "A full-stack education platform with structured pages and backend support for learning-related features.",
+    image: "/EduSmart.png",
+    tags: ["React", "Node.js", "Express", "MongoDB"],
     links: {
-      github: "https://github.com/Leeni-Patidar/NoteMindAI",
+      github: "https://github.com/Leeni-Patidar/EduSmart",
     },
   },
   {
-    title: "Education-Application",
+    title: "Concept Visualizer AI",
     description:
-      "A full-stack education platform with structured pages and backend support for learning-related features.",
-    image: "/Collex.png",
-    tags: ["React", "Node.js", "Express", "MongoDB"],
+      "An intelligent AI-powered platform that generates personalized educational content combining text explanations with visual aids. It offers a comprehensive learning experience by providing detailed explanations and relevant images to enhance understanding of complex concepts.",
+    image: "/Concept-Visualizer-AI.png",
+    tags: ["React", "Python", "GroqAPI","Hugging Face" ,"ChromaDB"],
     links: {
-      github: "https://github.com/Leeni-Patidar/Education-Application",
+      github: "https://github.com/Leeni-Patidar/Multimodal-Education-Creator.git",
+      live: "https://concept-visualizer-ai.vercel.app/",
     },
   },
    {
@@ -69,18 +70,19 @@ const projects = [
     title: "Multivon",
     description:
       "A full-stack JavaScript application organized with separate frontend and backend workspaces.",
-    image: "/Collex.png",
+    image: "/Multivon.png",
     tags: ["React", "Node.js", "Express", "MongoDB"],
     links: {
       github: "https://github.com/Leeni-Patidar/Multivon",
+      live: "https://multivon.vercel.app",
     },
   },
     {
     title: "Fit Plan Hub",
     description:
       "A fitness planning web app for organizing workouts, goals, and healthy routines in one place.",
-    image: "/Collex.png",
-    tags: ["React", "JavaScript", "CSS"],
+    image: "/Fit_Plan_Hub.png",
+    tags: ["React", "Node.js", "Express", "MongoDB"],
     links: {
       github: "https://github.com/Leeni-Patidar/Fit-Plan-Hub",
     },
